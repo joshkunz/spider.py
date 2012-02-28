@@ -35,5 +35,4 @@ def add_links(process, page, response):
 		process.get(link)
 
 print 'Starting...'
-scan.connect_to(key='test')
 scan.run()
