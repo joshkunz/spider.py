@@ -37,7 +37,7 @@ only ~300 lines.
 
 ## Very Basic Example
 
-More complete examples can be found in the /examples/ folder.
+More complete examples can be found in the /examples/ folder. (*see [basic.py]("https://github.com/Joshkunz/spider.py/blob/master/examples/basic.py", "basic.py"))
 
 	import spider
 	
