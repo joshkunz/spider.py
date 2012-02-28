@@ -113,8 +113,8 @@ class Scour(object):
 			seed_urls: a list of urls to seed the spider
 			process_count: number of fetchers to spawn, default to the number
 			of cpu's (or cores) found on the system.
-			log: The name of the log file. If set to non it will disable 
-			logging and any calls to process.log will simple bee noop's.
+			log: The name of the log file. If set to 'None' it will disable 
+			logging and any calls to process.log will simply be noop's.
 			default filename is scrape.log
 			log_format: the format of each call to process.log, the format is
 			the one used in the python logging module documentation for the 
@@ -191,7 +191,7 @@ class Scour(object):
 		"""Start a cluster server master, if 'run' has been called on another
 		system its recomended to use the connect_to method instead.
 			
-		address: ip address of the server
+		address: Ip address of the server
 		port: Port to serve on
 		key: Authentication key
 		"""
