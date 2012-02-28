@@ -37,7 +37,7 @@ only ~300 lines.
 
 ## Very Basic Example
 
-More complete examples can be found in the /examples/ folder. (*see [basic.py]("https://github.com/Joshkunz/spider.py/blob/master/examples/basic.py", "basic.py")*)
+More complete examples can be found in the [/examples/][2] folder. (*see [basic.py][1]*)
 
 	import spider
 	
@@ -63,3 +63,6 @@ More complete examples can be found in the /examples/ folder. (*see [basic.py]("
 			process.get(url)
 
 	scour.run()
+
+  [1]: https://github.com/Joshkunz/spider.py/blob/master/examples/basic.py	"basic.py"
+  [2]: https://github.com/Joshkunz/spider.py/blob/master/examples			"/examples/"
