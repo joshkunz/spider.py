@@ -23,7 +23,7 @@ Extractors are registed using the scour object and the extractor decorator.
 @scour.extractor
 def do_somthing(process, page, response):
 	pass
-```python
+```
 
 Or they can be registed by passing the function to `scour.extractor`
 
