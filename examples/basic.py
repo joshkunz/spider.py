@@ -7,7 +7,7 @@ GOOD_SCHEMES = ('http', 'https')
 
 scan = spider.Scour(seed_urls=seeds)
 if not hasattr(scan, 'manager'):
-	scan.setup_manager()
+	scan.local_manager()
 seen_urls = scan.manager.list()
 
 def iter_unique_urls(url_list):

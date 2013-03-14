@@ -8,6 +8,7 @@ see /examples/ for example scrapers written with the framework.
 Todo:
 	Custom error handlers, not just logging
 	Fix NoneType Error # not my fault, it's due to 599 responses
+    Make a generic Queue interface for alternate queue's
 
 """
 
@@ -142,7 +143,7 @@ class Scour(object):
 			self.fetch_queue.put(url)
 	
 	def extractor(self, func):
-		"""Decorate a funtions to be run as an extractor"""
+		"""Decorate a funtion to be run as an extractor"""
 
 		self._extractors.append(func)
 		return func
@@ -157,7 +158,11 @@ class Scour(object):
 		self.manager.get_server().serve_forever()
 
 	def local_manager(self):
-		"""Make a sync manager to controll the local queue."""
+		"""Make a sync manager to controll the local queue.
+
+            If this instance of the spider is being run locally, this method
+        must be called before the crawler begins running..."""
+
 		self.islocal = True
 		self.manager = SyncManager()
 		self.manager.start()
@@ -197,18 +202,15 @@ class Scour(object):
 		"""
 
 		madeManager = not hasattr(self, 'manager')
-		print "made", madeManager, not hasattr(self, 'manager'), self.islocal
 		if madeManager:	
-			self.setup_manager()
+			self.setup_manager(**kwargs)
 
 		self.setup_processes()
 		if self.islocal:
 			self.manager.join()
-		elif madeManager:
-			self.manager = 
 		else:
 			self.setup_processes()
-			print """Using a cluster server...Exiting..."""
+			print "Using a cluster server...\nExiting..."
 		
 	def connect_to(self, address='', port=50000, key=''):
 		"""Connect to a Scour Server
