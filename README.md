@@ -1,3 +1,8 @@
+**WARNING** This repository is no longer maintained and was never destined
+for any kind of real-life usage. This was mainly written for me to learn more
+about parallelism and multiplexed-IO, the code is *meh* and it likely
+no longer works **WARNING**
+
 spider.py
 ============
 
